@@ -17,6 +17,7 @@ public class Main {
         cafe.addProduct("Mineral Water", 1.0);
         cafe.addProduct("Orange Juice", 1.25);
         cafe.addProduct("English Tea", 0.90);
+        cafe.addProduct("Turkish Tea", 0.90);
 
         System.out.println("Menu: \n");
         System.out.println("Products & Prices\n");

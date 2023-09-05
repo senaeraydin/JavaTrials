@@ -58,6 +58,16 @@ public class UserController {
         return this.userService.enrolluserToPlaylist(playlistId, userId);
     }
 
+    @PutMapping("/username/{username}/password/{password}")
+    @ApiOperation(value = "user login method" )
+    public @ApiResponse String loginUser(@PathVariable @ApiParam("username") String username,
+                                         @PathVariable @ApiParam("password") String password){
+       if(userService.isThereAUser(username, password)){
+           return "User login successed!";
+       } else
+           return "User can not login";
+    }
+
 
 
 }

@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -50,4 +51,18 @@ public class UserServiceImpl implements UserService {
         playlistEntity.enrollUser(user);
         return playlistRepository.save(playlistEntity);
     }
+
+    @Override
+    public boolean isThereAUser(String username, String password) {
+        // todo userName Boş değilse
+        UserEntity user = userRepository.findByUsername(username);
+
+        if (Objects.equals(password, user.getPassword())) {
+            return true;
+        } else
+            return false;
+
+    }
+
+
 }

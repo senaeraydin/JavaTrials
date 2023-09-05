@@ -22,4 +22,6 @@ public interface UserService {
     public void deleteUserById(Long userId);
     public PlaylistEntity enrolluserToPlaylist(Long playlistId, Long userId);
 
+    boolean isThereAUser(String username, String password);
+
 }
